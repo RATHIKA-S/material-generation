@@ -1,0 +1,17 @@
+{
+  "name": "genmat-omni",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev:backend": "cd backend && if exist .venv\\Scripts\\python.exe (.venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --port 8000) else (python -m uvicorn app.main:app --reload --port 8000)",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently -k -n BACKEND,FRONTEND -c green,cyan \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:all": "npm run dev"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "concurrently": "^9.0.1",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2"
+  }
+}
